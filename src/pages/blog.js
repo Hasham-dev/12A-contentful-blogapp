@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+// import firebase from '../config/firebase'
+// import useFirebase from '../config/useFirebase';
 
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -32,9 +34,20 @@ const Blog = () => {
       }
     `
   )
+  // const firebase = useFirebase();
+
+  // useEffect(() => {
+  //  if (!firebase) return;
+  //  return firebase.auth().onAuthStateChanged((user) => {
+  //    console.log('User:', user);
+  //  });
+  // }, 
+  // [firebase]);
+
+  
   const [user] = useState(false)
   return (
-    <Layout>
+    <Layout className="Layout">
       <SEO title="Blog" />
       <p className="center">
         <Link to="/" className="Link center">Go back to the Homepage</Link>
@@ -62,7 +75,7 @@ const Blog = () => {
               <div className="button">
                 {user?<>
                   <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
-                </>:<Link to={`/blog/${edge.node.slug}/`}>Login to Read More</Link>}
+                </>:<Link to={`/blog/${edge.node.slug}/`} >Login to Read More</Link>}
               </div>
             </li>
           )
