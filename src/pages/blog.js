@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Img from "gatsby-image"
@@ -32,11 +32,12 @@ const Blog = () => {
       }
     `
   )
+  const [user] = useState(false)
   return (
     <Layout>
       <SEO title="Blog" />
-      <p>
-        <Link to="/">Go back to the homepage</Link>
+      <p className="center">
+        <Link to="/" className="Link center">Go back to the Homepage</Link>
       </p>
       <ul className="posts">
         {data.allContentfulBlogPost.edges.map(edge => {
@@ -59,7 +60,9 @@ const Blog = () => {
                 {edge.node.excerpt.childMarkdownRemark.excerpt}
               </p>
               <div className="button">
-                <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
+                {user?<>
+                  <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
+                </>:<Link to={`/blog/${edge.node.slug}/`}>Login to Read More</Link>}
               </div>
             </li>
           )

@@ -37,11 +37,14 @@ const BlogPost = props => {
   return (
     <Layout>
       <SEO title={props.data.contentfulBlogPost.title} />
-      <Link to="/blog/">Visit the Blog Page</Link>
+      <div className="center">
+
+      <Link to="/blog/" className="Link">Visit the Blog Page</Link>
+      </div>
       <div className="content">
-        <h1>{props.data.contentfulBlogPost.title}</h1>
+        <h2 className="center">{props.data.contentfulBlogPost.title}</h2>
         <span className="meta">
-          Posted on {props.data.contentfulBlogPost.publishedDate}
+          Posted on {props.data.contentfulBlogPost.publishDate}
         </span>
 
         {props.data.contentfulBlogPost.featuredImage && (
