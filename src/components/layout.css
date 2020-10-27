@@ -662,5 +662,5 @@ pre tt:after {
 .image{
   position: absolute;
   width: 300px;
-  right: 0;
+  right: 10%;
 }
