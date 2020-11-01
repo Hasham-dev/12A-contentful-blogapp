@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 // import firebase from '../config/firebase'
 // import useFirebase from '../config/useFirebase';
-
+import '../components/layout.css'
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -44,7 +44,7 @@ const Blog = () => {
   // }, 
   // [firebase]);
 
-  
+
   const [user] = useState(false)
   return (
     <Layout className="Layout">
@@ -73,9 +73,9 @@ const Blog = () => {
                 {edge.node.excerpt.childMarkdownRemark.excerpt}
               </p>
               <div className="button">
-                {user?<>
+                {user ? <>
                   <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
-                </>:<Link to={`/blog/${edge.node.slug}/`} >Login to Read More</Link>}
+                </> : <Link to={`/blog/${edge.node.slug}/`} >Login to Read More</Link>}
               </div>
             </li>
           )
@@ -86,3 +86,35 @@ const Blog = () => {
 }
 
 export default Blog
+
+
+
+// import React, { Component } from 'react';
+
+// class UserState extends Component {
+
+//   constructor() {
+//     super();
+//     this.state = {
+//       isLoggedIn: false
+//     }
+//   }
+
+//   render() {
+//     let message;
+//     if(this.state.isLoggedIn) {
+//       message = <div><h1>Welcome User</h1></div>
+//     }else{
+//       message = <div><h1>Welcome Guest</h1></div>
+//     }
+
+//     return(
+//       <div>{message}</div>
+//     )
+//   }
+
+
+
+// }
+
+// export default UserState;

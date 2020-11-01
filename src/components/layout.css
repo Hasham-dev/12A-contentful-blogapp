@@ -641,7 +641,7 @@ pre tt:after {
 }
 .Link{
   text-decoration: none;
-  background-color: rgb(110, 57, 235);
+  background-color: rgb(9, 185, 224) !important;
   border-radius: 10px;
   padding: 10px;
   font-size: 14px;
@@ -666,6 +666,8 @@ pre tt:after {
 }
 .featured{
   margin-bottom: 20px;
+  border-radius: 5px;
+
 }
 .Layout::before{
   content: "";
@@ -677,4 +679,12 @@ pre tt:after {
     z-index: -1;
     opacity: 0.7;
     overflow-x: hidden;
+}
+.MainIndex{
+  text-align: center !important;
+  color: #000 !important;
+}
+header{
+  background-color: rgb(9, 185, 224) !important;
+
 }
